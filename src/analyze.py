@@ -83,3 +83,9 @@ def generate_report():
         "high_spending_clients": clientes_alto_gasto,
         "monthly_sales": ventas_mensuales
     }
+
+if __name__ == "__main__":
+    import json as _json
+    reporte = generate_report()
+    with open("final_report.json", "w", encoding="utf-8") as archivo:
+        _json.dump(reporte, archivo, indent=4, ensure_ascii=False)
